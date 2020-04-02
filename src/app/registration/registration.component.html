@@ -1,0 +1,35 @@
+<pre>
+<form [formGroup]="registrationGroup">
+Name:<span style="color:red">*</span
+  ><input type="text" name="name" placeholder="enter the name" formControlName="name">
+
+<span style="color:red" *ngIf="registrationGroup.get('name').value==''&& registrationGroup.get('name').touched">
+   name is required
+</span>
+MobileNumber:<span style="color:red">*</span>
+<input type="number" name="mobilenumber" placeholder="enter the mobilenumber" formControlName="mobileNumber">
+<span style="color:red" *ngIf="registrationGroup.get('mobileNumber').value==''&& registrationGroup.get('mobileNumber').touched">
+  mobile number is required
+</span>
+Email-ID:<span style="color:red">*</span>
+<input type="email" name="email" placeholder="please enter the email" formControlName="emailId">
+<span style="color:red" *ngIf="registrationGroup.get('emailId').value==''&& registrationGroup.get('emailId').touched">
+  email id is required 
+</span>
+
+DLNumber:<span style="color:red">*</span><input type="text" name="DLNumber" placeholder="enter the DLNumber" formControlName="DLNumber">
+<span style="color:red" *ngIf="registrationGroup.get('DLNumber').value==''&& registrationGroup.get('DLNumber').touched">
+   DLnumber is required
+</span>
+Password:<span style="color:red">*</span><input type="password" name="password" placeholder="enter the password" formControlName="password">
+<span style="color:red" *ngIf="registrationGroup.get('password').value==''&& registrationGroup.get('password').touched">
+  password is required
+</span>
+Confirm Password:<span style="color:red">*</span><input type="password" name="cofirm password" placeholder="enter the password" formControlName="confirmpassword">
+<span style="color:red" *ngIf="registrationGroup.get('confirmpassword').value==''&& registrationGroup.get('confirmpassword').touched">
+  confirm password is required
+</span>
+{{registrationGroup.invalid}}
+<button (click)="submit()" [disabled]="registrationGroup.invalid">submit</button>
+</form>
+</pre>

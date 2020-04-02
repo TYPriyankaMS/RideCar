@@ -1,0 +1,15 @@
+<pre>
+<form [formGroup]="loginGroup">
+  email:<span style="color:red">*</span><input type="email" name="email" placeholder="enter the email" formControlName="emailId">
+  <span style="color:red" *ngIf="loginGroup.get('emailId').value==''&& loginGroup.get('emailId').touched">
+      email id is required
+    </span>
+    password:<span style="color:red">*</span><input type="password" name="password" placeholder="enter the password" formControlName="password">
+    <span style="color:red" *ngIf="loginGroup.get('password').value==''&& loginGroup.get('password').touched">
+        password is required
+      </span>
+      <input type="submit" name="submit" (click)="login()"><input type="reset" name="cancel"><span style="color:blue">new user? create Account</span><button (click)="routeToRegistration()">SignUp</button>
+  </form>
+  <span *ngIf="showError" style="color:red">Email and password is incorrect</span>
+</pre>
+
